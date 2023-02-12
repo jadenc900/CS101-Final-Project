@@ -1,0 +1,15 @@
+<table>
+    <tr>
+      <th>Message</th>
+      <th>Read</th>
+    </tr>
+    {% for notification in notifications %}
+      <tr>
+        <td>{{ notification.message }}</td>
+        <td>{{ notification.read }}</td>
+      </tr>
+    {% endfor %}
+  </table>
+
+#template uses Jinja2 syntax to loop over the notifications list and display each notification in a table row.
+  

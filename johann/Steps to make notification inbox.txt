@@ -1,0 +1,36 @@
+1.	Database design: store information about each user and their notifications in a database. 
+-	for a database in a FLASK application is SQLite or a more robust relational database management system such as MySQL or PostgreSQL. 
+-	create a table to store the user information, and another table to store the notifications. 
+-	establish a relationship between the user and their notifications, such as a foreign key relationship.
+2.	User authentication: To access the inbox, a user will need to log in to your FLASK application. implement user authentication using a library such as Flask-Login.
+
+3.	Adding notifications: When an event occurs : notify the user about
+-	add a new record to the notifications table in the database. 
+-	use FLASK's database library, such as Flask-SQLAlchemy, to interact with the database and insert new records.
+4.	Displaying notifications: When a user logs in, retrieve the notifications for that user from the database and display them in the inbox
+- use a template engine such as Jinja2 to render the notifications in HTML.
+5.	Marking notifications as read: When a user has read a notification, need to update the corresponding record in the database to indicate that it has been read. 
+-	provide a button in the inbox that the user can click to mark a notification as read.
+6.	Removing notifications: remove notifications that are no longer relevant, such as notifications that are more than a certain number of days old.
+-	 using a task scheduler such as Celery or a cron job to periodically remove outdated notifications from the database.
+
+
+
+Implement a notification inbox in your FLASK application:
+1.	Set up FLASK environment and install the necessary dependencies. 
+-  FLASK framework, a database library such as Flask-SQLAlchemy, and a template engine such as Jinja2.
+2.	Design database schema to store user information and notifications. 
+-	create tables for users and notifications and establish a relationship between them.
+3.	Implement user authentication using a library such as Flask-Login. This will allow users to log in to your application and access their notifications.
+
+4.	Write code to add new notifications to the database when events occur that you want to notify the user about. You could use the database library, such as Flask-SQLAlchemy, to insert new records into the notifications table.
+
+5.	Write code to retrieve the notifications for a user from the database and display them in the inbox. 
+-	template engine such as Jinja2 to render the notifications in HTML.
+
+6.	Write code to mark notifications as read when the user has read them. You could provide a button in the inbox that the user can click to mark a notification as read, and then update the corresponding record in the database.
+-	How? 
+7.	Write code to periodically remove outdated notifications from the database 
+-	a task scheduler such as Celery or a cron job to run a script that removes notifications that are older than a certain number of days.
+-	
+8.	Test your implementation by adding notifications, logging in as a user, and checking the inbox to make sure that the notifications are displayed correctly.
