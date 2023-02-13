@@ -1,1 +1,3 @@
 deadline24hr - the calculated deadline for the 24hr form based on date of arrival
+res_permit_deadline - calculated last day to have an appointment scheduled at the 
+						exit entry bureau

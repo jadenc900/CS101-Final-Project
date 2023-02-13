@@ -27,18 +27,22 @@ def return_deadlines():
 
     res_permit_deadline = permit_date - timedelta(days = 1)
 
+    # Health Checkup suggested last day
+    health_check_deadline = permit_date - timedelta(days = 7)
+
     # need to do all other deadlines
 
     ### Maybe attempt table / calendar output ??? 
     print(f'Your Arrival Date: {year}-{month}-{day}')
     
-    print('Non-negotiable Deadlines:\n')
+    print('\nNon-negotiable Deadlines:\n')
 
     print("24 hour form by the end of the day", deadline24hr)
 
-    print("Suggested Deadlines and Due-Dates:\n")
+    print("\nSuggested Deadlines and Due-Dates:\n")
     
-    #print("Health Checkup Appointment by")
+    print("Health Checkup Appointment (best) by", health_check_deadline)
+
     print("Last Day for Residence Permit Appointment: ", res_permit_deadline)
 
 return_deadlines()
