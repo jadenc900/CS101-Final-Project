@@ -25,22 +25,44 @@ def return_deadlines():
 
     res_permit_deadline = permit_date - timedelta(days = 1)
 
+    # Health Check recommended day 
+    health_check_date = arrivalDate + timedelta(days = 6)
+
     # Health Checkup suggested last day
     health_check_deadline = permit_date - timedelta(days = 7)
 
-    # need to do all other deadlines
+    # SIM Card suggested timeline
+    simdate = arrivalDate + timedelta(days = 2)
+
+    # Bank Account suggested
+    bankdate = arrivalDate + timedelta(days = 3)
 
     ### Maybe attempt table / calendar output ??? 
     print(f'Your Arrival Date: {year}-{month}-{day}')
     
     print('\nNon-negotiable Deadlines:\n')
 
-    print("24 hour form by the end of the day", deadline24hr)
+    print("Submit 24 hour form application by the end of the day", deadline24hr)
+    print("You will need this form to apply for your residence permit")
 
-    print("\nSuggested Deadlines and Due-Dates:\n")
-    
-    print("Health Checkup Appointment (best) by", health_check_deadline)
+    print("Health Checkup Appointment by", health_check_deadline)
 
     print("Last Day for Residence Permit Appointment: ", res_permit_deadline)
+
+    print("\nSuggested Deadlines and Due-Dates:\n")
+
+    print("Try to obtain your SIM card by", simdate)
+    print("You will need a Chinese phone number to open a bank account")
+
+    print("Try to open your bank account by", bankdate)
+    print("You will need a bank account to use Wechat Pay and in some instances," \
+        "to use Alipay.")
+
+    print("try to schedule your health appointment on", health_check_date)
+    print("new appointments are added on Thursday each week")
+
+    print("This is the ISS recommended timeline")
+
+    
 
 return_deadlines()
