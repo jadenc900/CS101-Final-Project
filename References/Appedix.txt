@@ -1,3 +1,10 @@
+arrivalDate - date of landing in China
 deadline24hr - the calculated deadline for the 24hr form based on date of arrival
+permit_date - 1 month from arriaval date
 res_permit_deadline - calculated last day to have an appointment scheduled at the 
-						exit entry bureau
+						exit entry bureau (1 day before 1 month from arrival)
+health_check_date - ISS recommended date to schedule a health check
+health_check_deadline - Last day to have a health check and receive the report
+						before the last day to have a permit appointment
+simdate - ISS recommended date to set up a sim card/phone number
+bankdate - ISS recommended date to set up a bank account

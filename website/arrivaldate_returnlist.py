@@ -1,4 +1,3 @@
-from calendar import *
 from datetime import *
 from logging.config import stopListening
 
@@ -62,7 +61,5 @@ def return_deadlines():
     print("new appointments are added on Thursday each week")
 
     print("This is the ISS recommended timeline")
-
-    
 
 return_deadlines()
