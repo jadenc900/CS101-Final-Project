@@ -1,5 +1,3 @@
-# Jaden Chee 2023-02-11
-
 from calendar import *
 from datetime import *
 from logging.config import stopListening
