@@ -6,4 +6,3 @@ for arrival date -> deadlines code:
 - https://stackoverflow.com/questions/66431493/typeerror-descriptor-date-for-datetime-datetime-objects-doesnt-apply-to-a
 - https://www.geeksforgeeks.org/python-datetime-timedelta-function/
 - https://pynative.com/python-timedelta/#h-time-delta-with-days
-

@@ -8,3 +8,4 @@ health_check_deadline - Last day to have a health check and receive the report
 						before the last day to have a permit appointment
 simdate - ISS recommended date to set up a sim card/phone number
 bankdate - ISS recommended date to set up a bank account
+health_insurance - date to submit health insurance form (3 days before arrival)
