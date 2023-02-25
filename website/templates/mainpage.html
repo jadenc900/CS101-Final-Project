@@ -72,6 +72,20 @@
 
 </body>
 
+<h3>Leave a comment:</h3>
+<form action="{{ url_for('add_comment') }}" method="post">
+  <div class="form-group">
+    <label for="comment"></label>
+    <textarea class="form-control" id="comment" name="comment" rows="3" required></textarea>
+  </div>
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form>
 
+<div style="position: fixed; top: 20px; right: 20px; width: 300px; background-color: #f1f1f1; border: 1px solid #ddd; padding: 10px;">
+    <h3 style="text-align: center;">Notifications</h3>
+    <p>Sample notification 1</p>
+    <p>Sample notification 2</p>
+    <p>Sample notification 3</p>
+  </div>
 
 </html>
