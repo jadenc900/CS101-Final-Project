@@ -1,21 +1,28 @@
-from . import db
+from  . import db
 from flask_login import UserMixin
 from sqlalchemy.sql import func
 from datetime import date
 
-
-class Note(db.Model):
-    id = db.Column(db.Integer, primary_key=True)
-    data = db.Column(db.String(10000))
-    date = db.Column(db.DateTime(timezone=True), default=func.now())
+class Comments (db.Model):
+    id = db.Column(db.Integer,primary_key=True)
+    data = db.Column(db.String(100000))
+    # foreign Key link to class User 
     user_id = db.Column(db.Integer, db.ForeignKey('user.id'))
 
+class Notifications(db.Model)
+    id = db.Column(db.Integer,primary_key=True)
+    data = db.Column(db.String(100000))
+    date = db.Column(db.Date.Time(timezone= True), default=func.now())
+    # foreign Key link to class User 
+    user_id = db.Column(db.Integer, db.ForeignKey('user.id'))
 
 class User(db.Model, UserMixin):
     id = db.Column(db.Integer, primary_key=True)
-    email = db.Column(db.String(150), unique=True)
-    password = db.Column(db.String(150))
-    first_name = db.Column(db.String(150))
-    last_name = db.Column(db.String(150))
-    netID = db.Column(db.String(150))
-    date_of_entry= db.Column(db.Date, nullable=False, default=date.today)
+    fname = db.Column(db.String(50),unique = True)
+    lname = db.Column(db.String(50),unique = True)
+    netID = db.Column(db.String(6),unique = True)
+    arrivaldate = db.Column(db.String(11))
+    password = db.Column(db.String(20))
+    notifications = db.relationship('Notification')
+    comments = db.relationship("Comments")
+
