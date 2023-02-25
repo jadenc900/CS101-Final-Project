@@ -1,4 +1,4 @@
-from  . import db
+from . import db
 from flask_login import UserMixin
 from sqlalchemy.sql import func
 from datetime import date
@@ -9,12 +9,12 @@ class Comments (db.Model):
     # foreign Key link to class User 
     user_id = db.Column(db.Integer, db.ForeignKey('user.id'))
 
-class Notifications(db.Model)
-    id = db.Column(db.Integer,primary_key=True)
-    data = db.Column(db.String(100000))
-    date = db.Column(db.Date.Time(timezone= True), default=func.now())
-    # foreign Key link to class User 
-    user_id = db.Column(db.Integer, db.ForeignKey('user.id'))
+#class Notifications(db.Model):
+#    id = db.Column(db.Integer,primary_key=True)
+#    data = db.Column(db.String(100000))
+#    date = db.Column(db.Date.Time(timezone= True), default=func.now())
+#    # foreign Key link to class User 
+#    user_id = db.Column(db.Integer, db.ForeignKey('user.id'))
 
 class User(db.Model, UserMixin):
     id = db.Column(db.Integer, primary_key=True)
