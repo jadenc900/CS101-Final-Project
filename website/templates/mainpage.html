@@ -73,13 +73,17 @@
 </body>
 
 <h3>Leave a comment:</h3>
-<form action="{{ url_for('add_comment') }}" method="post">
-  <div class="form-group">
-    <label for="comment"></label>
-    <textarea class="form-control" id="comment" name="comment" rows="3" required></textarea>
-  </div>
+<ul class="list-group list-group-flush" id="notes">
+    {% for note in user.notes}
+    <li class="list-group-item":>{{note.data}}</li>
+    {%endfor%}
+</ul>
+<form method="POST"> 
+    <textarea class="form-control" id="comment" name="comment" ></textarea>
+    <br></br>
   <button type="submit" class="btn btn-primary">Submit</button>
 </form>
+{% endblock %}
 
 <div style="position: fixed; top: 20px; right: 20px; width: 300px; background-color: #f1f1f1; border: 1px solid #ddd; padding: 10px;">
     <h3 style="text-align: center;">Notifications</h3>
