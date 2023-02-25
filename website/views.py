@@ -1,25 +1,26 @@
 from flask import Blueprint, render_template, request, flash, jsonify
 from flask_login import login_required, current_user
-from .models import Note
+from .models import Comments
+from .models import Notifications
 from . import db
 import json
 
 views = Blueprint('views', __name__)
 
 
-@views.route('/', methods=['GET', 'POST'])
+@views.route('/', methods=['GET', 'POST', 'NOTIFICATION'])
 @login_required
 def home():
 #    if request.method == 'POST': 
-#        note = request.form.get('note')#Gets the note from the HTML 
+#        comment = request.form.get('comment')#Gets the comment from the HTML 
 
-#        if len(note) < 1:
-#            flash('Note is too short!', category='error') 
+#        if len(comment) < 1:
+#            flash('Comment is too short!', category='error') 
 #       else:
-#            new_note = Note(data=note, user_id=current_user.id)  #providing the schema for the note 
-#            db.session.add(new_note) #adding the note to the database 
+#            new_comment = Comment(data=comment, user_id=current_user.id)  #providing the schema for the comment
+#            db.session.add(new_comment) #adding the note to the database 
 #            db.session.commit()
-#            flash('Note added!', category='success')
+#            flash('Comment added!', category='success')
 
     return render_template("mainpage.html", user=current_user)
 
