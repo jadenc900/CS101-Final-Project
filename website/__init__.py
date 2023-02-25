@@ -1,16 +1,41 @@
-# everything here runs automatically 
+from flask import Flask
+from flask_sqlalchemy import SQLAlchemy
+from os import path
+from flask_login import LoginManager
 
-from flask import *
+db = SQLAlchemy()
+DB_NAME = "database.db"
+
 
 def create_app():
-	app = Flask(__name__) # initialize Flask
-	app.config['Secret_key'] = "this is a sentence to encrypt the website info"
-	
-	from .views import views 
+    app = Flask(__name__)
+    app.config['SECRET_KEY'] = 'hjshjhdjah kjshkjdhjs'
+    app.config['SQLALCHEMY_DATABASE_URI'] = f'sqlite:///{DB_NAME}'
+    db.init_app(app)
 
-	from .authentification import auth
+    from .views import views
+    from .auth import auth
 
-	app.register_blueprint(views, url_prefix = '/')
-	app.register_blueprint(auth, url_prefix = '/')
+    app.register_blueprint(views, url_prefix='/')
+    app.register_blueprint(auth, url_prefix='/')
 
-	return app
+    from .databases import *
+    
+    with app.app_context():
+        db.create_all()
+
+    login_manager = LoginManager()
+    login_manager.login_view = 'auth.login'
+    login_manager.init_app(app)
+
+    @login_manager.user_loader
+    def load_user(id):
+        return User.query.get(int(id))
+
+    return app
+
+
+def create_database(app):
+    if not path.exists('website/' + DB_NAME):
+        db.create_all(app=app)
+        print('Created Database!')
